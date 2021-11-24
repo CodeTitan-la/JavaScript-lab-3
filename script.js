@@ -7,6 +7,7 @@ const submissions = [
 ]
 
 
+/*
 function addSubmission(array,newName,newScore,newDate){
     let passed = false;
     if (newScore >= 60){
@@ -16,25 +17,38 @@ function addSubmission(array,newName,newScore,newDate){
     array.push(newSubmission);
 }
 
+addSubmission(submissions,"clark", 50, "2020-23-2");
+
 function deleteSubmissionByIndex(array,index){
      array.splice(index, 1);
 }
 
+console.log(deleteSubmissionByIndex(submissions,1));
+
 function deleteSubmissionByName(array, name){
     let indexPosition = array.findIndex(submission => submission.name === name);
-   console.log(array.splice([indexPosition], 1));
+   array.splice([indexPosition], 1);
    console.log(submissions);
     
 }
 console.log(deleteSubmissionByName(submissions, "Joe"));
-
+*/
 
 
 editSubmision = function(array,index,score){
+    array[index].score = score;
+    if(score < 60){
+        array[index].passed = false;
+    }
+    else {
+        array[index].passed = true;
+    }
 
 }
+editSubmision(submissions, 1, 99);
+console.log(submissions);
 
-
+/*
 findSubmissionByName = function(array, name){
     let foundName = array.find(sub => sub.name === name);
     console.log(foundName);
@@ -42,29 +56,27 @@ findSubmissionByName = function(array, name){
 }
 console.log(findSubmissionByName(submissions, "Jack"));
 
-/*
+
 function findLowestScore(array){
     let lowestScore = 100
+    let foundScore = array.find(sub => sub.score === score);
     for(let sub of array){
         if(sub.score < lowestScore){
             lowestScore = sub.score;
             
-
+               
             }
         }
     }
+    console.log(findLowestScore(submissions));
 
-function findAverageScore(array)
-    let averageScore = 0;
-    for(let averageScore of submissions ){
-
+/*
+    for(let sub of array){
+        if(sub.score < lowestScore){
+            lowestScore = sub.score;
+            
+               
+            }
+        }
     }
-
-
- addSubmission(submissions,"Jimmy", 50, "2020-23-2");
- console.log(submissions);
- console.log(deleteSubmissionByIndex(submissions,1));
- console.log(findLowestScore(submissions));
-
- */
-
+*/
