@@ -7,7 +7,6 @@ const submissions = [
 ]
 
 
-
 function addSubmission(array,newName,newScore,newDate){
     let passed = false;
     if (newScore >= 60){
@@ -15,17 +14,35 @@ function addSubmission(array,newName,newScore,newDate){
     }
     let newSubmission = {name: newName, score: newScore, date: newDate, passed: passed}
     array.push(newSubmission);
- }
+}
 
- function deleteSubmissionByIndex(array,index){
+function deleteSubmissionByIndex(array,index){
      array.splice(index, 1);
- }
+}
 
- //function deleteSubmissionByName(array,name){
-  // array.splice(array.findIndex(name)); 
+function deleteSubmissionByName(array, name){
+    let indexPosition = array.findIndex(submission => submission.name === name);
+   console.log(array.splice([indexPosition], 1));
+   console.log(submissions);
+    
+}
+console.log(deleteSubmissionByName(submissions, "Joe"));
+
+
+
+editSubmision = function(array,index,score){
+
+}
+
+
+findSubmissionByName = function(array, name){
+    let foundName = array.find(sub => sub.name === name);
+    console.log(foundName);
    
- //}
+}
+console.log(findSubmissionByName(submissions, "Jack"));
 
+/*
 function findLowestScore(array){
     let lowestScore = 100
     for(let sub of array){
@@ -47,8 +64,7 @@ function findAverageScore(array)
  addSubmission(submissions,"Jimmy", 50, "2020-23-2");
  console.log(submissions);
  console.log(deleteSubmissionByIndex(submissions,1));
- //console.log(deleteSubmissionByName(submissions, "Jane"));
  console.log(findLowestScore(submissions));
 
- 
+ */
 
