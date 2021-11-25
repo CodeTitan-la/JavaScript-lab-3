@@ -1,10 +1,10 @@
-const submissions = [
+const submissions = [  
 {name: "Jane", score: 95, date: "2020-01-24", passed: true},
 {name:"Joe", score: 77, date: "2018-05-14", passed: true},
 {name:"Jack", score: 59, date:"2019-07-05", passed: false},
 {name: "Jill", score: 88, date: "2020-04-22", passed:true}
 
-]
+];
 
 
 /*
@@ -34,7 +34,7 @@ function deleteSubmissionByName(array, name){
 console.log(deleteSubmissionByName(submissions, "Joe"));
 */
 
-
+/*
 editSubmision = function(array,index,score){
     array[index].score = score;
     if(score < 60){
@@ -48,7 +48,7 @@ editSubmision = function(array,index,score){
 editSubmision(submissions, 1, 99);
 console.log(submissions);
 
-/*
+
 findSubmissionByName = function(array, name){
     let foundName = array.find(sub => sub.name === name);
     console.log(foundName);
@@ -58,25 +58,49 @@ console.log(findSubmissionByName(submissions, "Jack"));
 
 
 function findLowestScore(array){
-    let lowestScore = 100
-    let foundScore = array.find(sub => sub.score === score);
-    for(let sub of array){
-        if(sub.score < lowestScore){
-            lowestScore = sub.score;
-            
-               
+    array.forEach(sub => sub.score );{
+        let lowestScore = 100;
+        for(sub of array)
+            if(sub.score < lowestScore){
+                lowestScore = sub.score;
+                console.log(sub);
             }
-        }
     }
-    console.log(findLowestScore(submissions));
+} 
 
-/*
-    for(let sub of array){
-        if(sub.score < lowestScore){
-            lowestScore = sub.score;
-            
-               
-            }
-        }
-    }
+console.log(findLowestScore(submissions));
+
 */
+/*
+findAverageScore = function(array){
+    let total = 0;
+    let average = 0;
+    for(sub.score of array){
+        let i = 0; i <array.length; i++;
+        if(sub.score !== total){
+            total += sub.score
+            average = total / array.length;
+            console.log(average);
+        }
+        
+
+        
+    }
+}
+
+findAverageScore(submissions);
+*/
+
+filterPassing = function(array){
+    const passingStudents = array.filter(submission => submission.passed === true);
+    console.log(passingStudents);
+    
+}
+filterPassing(submissions);
+
+
+filter90AndAbove = function(array){
+    const above90 = array.filter(submission => submission.score >= 90);
+    console.log(above90);
+}
+filter90AndAbove(submissions);
