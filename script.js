@@ -7,7 +7,7 @@ const submissions = [
 ];
 
 
-/*
+
 function addSubmission(array,newName,newScore,newDate){
     let passed = false;
     if (newScore >= 60){
@@ -32,9 +32,7 @@ function deleteSubmissionByName(array, name){
     
 }
 console.log(deleteSubmissionByName(submissions, "Joe"));
-*/
 
-/*
 editSubmision = function(array,index,score){
     array[index].score = score;
     if(score < 60){
@@ -70,26 +68,16 @@ function findLowestScore(array){
 
 console.log(findLowestScore(submissions));
 
-*/
-/*
 findAverageScore = function(array){
-    let total = 0;
-    let average = 0;
-    for(sub.score of array){
-        let i = 0; i <array.length; i++;
-        if(sub.score !== total){
-            total += sub.score
-            average = total / array.length;
-            console.log(average);
-        }
-        
-
-        
+    let sum = 0;
+    for( let submission of array){
+        sum += submission.score 
     }
+    let averageScore = sum / array.length;
+    return averageScore;
 }
+console.log(findAverageScore(submissions));
 
-findAverageScore(submissions);
-*/
 
 filterPassing = function(array){
     const passingStudents = array.filter(submission => submission.passed === true);
@@ -104,3 +92,17 @@ filter90AndAbove = function(array){
     console.log(above90);
 }
 filter90AndAbove(submissions);
+
+function findLowestScore(array){
+    let lowestScore = 100;
+    let lowestIndex = 0;
+    array.forEach((submission, ind) => {
+        if(submission.score < lowestScore){
+        lowestScore = submission.score;
+        lowestIndex = ind;
+        }        
+    });
+return array[lowestIndex];
+}
+   
+console.log(findLowestScore(submissions));
