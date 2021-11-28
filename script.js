@@ -106,3 +106,41 @@ return array[lowestIndex];
 }
    
 console.log(findLowestScore(submissions));
+
+
+// Extended Challenges 
+
+// 1. log range between 2 numbers.
+
+createRange = function(start, end){
+    newArray = [ ];
+    for(let i = start; i < end; i++){
+        newArray.push(i);
+    }
+    return newArray;
+}
+console.log(createRange(2, 25));
+
+// 2. Return an object bwith array values as keys and the number of times that key appears. 
+
+const elementsString = ["a", "b", "c", "d", "e", "a", "b"];
+    let obj = { };
+countElements = function(array){
+    for (let i = 0; i < array.length; i++){
+        if(obj[array[i]] != null ){
+            obj[array[i]] += 1;
+        }
+        else {
+            obj[array[i]] = 1;
+        }
+    }
+    console.log(obj);
+}
+
+console.log(countElements(elementsString));
+
+
+const counts = {};
+const sampleArray = ['a', 'a', 'b', 'c'];
+sampleArray.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+console.log(counts)
